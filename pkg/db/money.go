@@ -22,7 +22,7 @@ type Money struct {
 	Partner     string             `bson:"partner" json:"partner"`
 	Currency    string             `bson:"currency" json:"currency"`
 	Description string             `bson:"description" json:"description"`
-	Group       *MoneyGroup        `bson:"group" json:"group"`
+	Group       *MoneyGroup        `bson:"group,omitempty" json:"group,omitempty"`
 	Created     time.Time          `bson:"created" json:"created"`
 }
 
