@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/nam-truong-le/lambda-utils-go/pkg/mongodb"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
@@ -16,12 +17,13 @@ type MoneyGroup struct {
 }
 
 type Money struct {
-	Amount      string      `bson:"amount" json:"amount"`
-	Partner     string      `bson:"partner" json:"partner"`
-	Currency    string      `bson:"currency" json:"currency"`
-	Description string      `bson:"description" json:"description"`
-	Group       *MoneyGroup `bson:"group" json:"group"`
-	Created     time.Time   `bson:"created" json:"created"`
+	ID          primitive.ObjectID `bson:"_id" json:"id"`
+	Amount      string             `bson:"amount" json:"amount"`
+	Partner     string             `bson:"partner" json:"partner"`
+	Currency    string             `bson:"currency" json:"currency"`
+	Description string             `bson:"description" json:"description"`
+	Group       *MoneyGroup        `bson:"group" json:"group"`
+	Created     time.Time          `bson:"created" json:"created"`
 }
 
 func CollectionMoney(ctx context.Context) (*mongo.Collection, error) {
