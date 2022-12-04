@@ -12,8 +12,9 @@ import (
 const collectionMoney = "money"
 
 type MoneyGroup struct {
-	Paid    bool      `bson:"paid" json:"paid"`
-	Created time.Time `bson:"created" json:"created"`
+	ID      primitive.ObjectID `bson:"_id" json:"id"`
+	Paid    bool               `bson:"paid" json:"paid"`
+	Created time.Time          `bson:"created" json:"created"`
 }
 
 type Money struct {
