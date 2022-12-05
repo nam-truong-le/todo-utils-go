@@ -17,6 +17,7 @@ type Todo struct {
 	Description string             `bson:"description" json:"description"`
 	Priority    string             `bson:"priority" json:"priority"`
 	Deadline    *time.Time         `bson:"deadline,omitempty" json:"deadline,omitempty"`
+	Finished    bool               `bson:"finished" json:"finished"`
 	Created     time.Time          `bson:"created" json:"created"`
 }
 
