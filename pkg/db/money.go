@@ -4,9 +4,11 @@ import (
 	"context"
 	"time"
 
-	"github.com/nam-truong-le/lambda-utils-go/pkg/mongodb"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
+
+	"github.com/nam-truong-le/lambda-utils-go/pkg/aws/ssm"
+	"github.com/nam-truong-le/lambda-utils-go/pkg/mongodb"
 )
 
 const collectionMoney = "money"
@@ -28,5 +30,9 @@ type Money struct {
 }
 
 func CollectionMoney(ctx context.Context) (*mongo.Collection, error) {
-	return mongodb.Collection(ctx, collectionMoney)
+	database, err := ssm.GetParameter(ctx, "/mongo/db", false)
+	if err != nil {
+		return nil, err
+	}
+	return mongodb.Collection(ctx, database, collectionMoney)
 }

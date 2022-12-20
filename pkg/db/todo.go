@@ -4,9 +4,11 @@ import (
 	"context"
 	"time"
 
-	"github.com/nam-truong-le/lambda-utils-go/pkg/mongodb"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
+
+	"github.com/nam-truong-le/lambda-utils-go/pkg/aws/ssm"
+	"github.com/nam-truong-le/lambda-utils-go/pkg/mongodb"
 )
 
 const collectionTodo = "todo"
@@ -22,5 +24,9 @@ type Todo struct {
 }
 
 func CollectionTodo(ctx context.Context) (*mongo.Collection, error) {
-	return mongodb.Collection(ctx, collectionTodo)
+	database, err := ssm.GetParameter(ctx, "/mongo/db", false)
+	if err != nil {
+		return nil, err
+	}
+	return mongodb.Collection(ctx, database, collectionTodo)
 }
