@@ -3,12 +3,12 @@ module github.com/nam-truong-le/todo-utils-go
 go 1.19
 
 require (
-	github.com/nam-truong-le/lambda-utils-go v1.10.8
+	github.com/nam-truong-le/lambda-utils-go v1.10.9
 	go.mongodb.org/mongo-driver v1.11.1
 )
 
 require (
-	github.com/aws/aws-lambda-go v1.36.0 // indirect
+	github.com/aws/aws-lambda-go v1.36.1 // indirect
 	github.com/aws/aws-sdk-go-v2 v1.17.3 // indirect
 	github.com/aws/aws-sdk-go-v2/config v1.18.7 // indirect
 	github.com/aws/aws-sdk-go-v2/credentials v1.13.7 // indirect
