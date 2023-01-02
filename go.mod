@@ -3,7 +3,7 @@ module github.com/nam-truong-le/todo-utils-go
 go 1.19
 
 require (
-	github.com/nam-truong-le/lambda-utils-go v1.13.0
+	github.com/nam-truong-le/lambda-utils-go v1.14.0
 	go.mongodb.org/mongo-driver v1.11.1
 )
 
