@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/nam-truong-le/lambda-utils-go v1.14.0
-	go.mongodb.org/mongo-driver v1.11.6
+	go.mongodb.org/mongo-driver v1.12.1
 )
 
 require (
@@ -38,5 +38,5 @@ require (
 	golang.org/x/exp v0.0.0-20221217163422-3c43f8badb15 // indirect
 	golang.org/x/sync v0.1.0 // indirect
 	golang.org/x/sys v0.3.0 // indirect
-	golang.org/x/text v0.5.0 // indirect
+	golang.org/x/text v0.7.0 // indirect
 )
